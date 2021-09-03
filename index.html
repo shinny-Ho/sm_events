@@ -63,7 +63,7 @@
                 </div>
                 <div class="r-envelope-success-grab-number">你有<span>000</span>抽</div>
                 <!-- 未登入 -->
-                <a class="r-envelope-btn js-r-envelope-btn">
+                <a class="r-envelope-btn js-open" href="#">
                     <img src="img/grab_btn.svg">
                     <p>登入猛戳抢红包</p>
                 </a>
@@ -157,7 +157,7 @@
                     </div>
                 </div>
                 <!-- 完成新手任務 -->
-                <a class="r-envelope-btn">
+                <a class="r-envelope-btn js-open" href="#">
                     <img src="img/grab_btn.svg">
                     <p>点我，完成新手任务​</p>
                 </a>
@@ -182,12 +182,12 @@
                 </div>
                 <!-- 動畫演示 抽獎完成 -->
                 <p class="r-envelope-lottery-popup-txt">目前累积金额<span>￥3.0</span></p>
-                <a class="r-envelope-btn">
+                <a class="r-envelope-btn js-close" href="#">
                     <img src="img/grab_btn.svg">
                     <p>继续抽奖</p>
                 </a>
                 <p class="r-envelope-lottery-popup-remaining-times">剩余<span>303</span>次</p>
-                <a class="r-envelope-btn" href="#">
+                <a class="r-envelope-btn js-close" href="#">
                     <img src="img/grab_btn.svg">
                     <p>回到活动首页</p>
                 </a>
@@ -219,7 +219,10 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.r-envelope-btn').on('click', function() {
+            $('.js-open').on('click', function() {
+                $('.r-envelope-lottery-popup-section').css('display', 'block');
+            });
+            $('.js-close').on('click', function() {
                 $('.r-envelope-lottery-popup-section').css('display', 'none');
             });
         });
